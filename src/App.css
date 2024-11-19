@@ -1,0 +1,25 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+header {
+  color: rebeccapurple;
+}
+
+header img {
+  width: 80%;
+  max-width: 150px;
+  aspect-ratio: 1;
+  margin-bottom: 20px;
+}

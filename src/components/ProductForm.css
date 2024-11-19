@@ -1,0 +1,54 @@
+form {
+  border: 3px solid rebeccapurple;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 600px;
+}
+
+.form-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 16px;
+  gap: 16px;
+}
+
+form .inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: auto;
+}
+
+form input, form button{
+  padding: 4px;
+  margin: auto;
+}
+
+form #amount {
+  width: 5rem;
+}
+
+form #productId {
+  width: 8rem;
+}
+
+form button {
+  outline: 2px solid rebeccapurple;
+  border: 2px solid white;
+  border-radius: 8px;
+  background-color: rebeccapurple;
+  color: white;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: white;
+  color: rebeccapurple;
+}
+
+.error {
+  display: block;
+  color: red;
+  font-style: italic;
+}

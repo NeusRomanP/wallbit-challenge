@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+}
+
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid rebeccapurple;
+  border-radius: 8px;
+}
+
+.product > span {
+  padding: 1rem;
+}
+
+.product > span:not(:last-child) {
+  border-right: 2px solid rebeccapurple;
+}
+
+.product .amount {
+  width: 7rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.product .image {
+  width: 4rem;
+}
+
+.product .unit-price,
+.product .total-price {
+  width: 100px;
+}
+
+.product .image-container {
+  width: 32px;
+  aspect-ratio: 1;
+  position: relative;
+}
+
+.product .image-container img {
+  max-width: 100%;
+  height: 100%;
+  background-color: white;
+  display: block;
+  object-fit: contain;
+  border-radius: 2px;
+  transition: 1s transform, 1s box-shadow;
+}
+
+.product .image-container img:hover {
+  position: absolute;
+  z-index: 9;
+  transform: scale(4);
+  box-shadow: 0 0 5px black;
+}
+
+.product .title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.product .amount button {
+  border-radius: 50%;
+  border: 1px solid rebeccapurple;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: rebeccapurple;
+}
+
+.product .amount button.add span{
+  display: block;
+  padding-top: 2px;
+}
+
+@media screen and (max-width: 600px) {
+  .product {
+    display: grid;
+    grid-template-areas:
+      "title title"
+      "amount amount"
+      "u-price t-price"
+      "image image";
+
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .product > span {
+    width: 100%;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+  }
+
+  .product > span:not(:last-child) {
+    border-right: none;
+  }
+
+  .product .image .image-container {
+    width: 80%;
+    max-width: 150px;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .product .image .image-container img:hover {
+    transform: none;
+  }
+
+  .product .title {
+    width: 100%;
+    grid-area: title;
+    white-space: normal;
+  }
+  .product .unit-price {
+    width: 100%;
+    grid-area: u-price;
+  }
+
+  .product .total-price {
+    width: 100%;
+    grid-area: t-price;
+  }
+
+  .product .amount {
+    grid-area: amount;
+  }
+
+  .product .image {
+    width: 100%;
+    grid-area: image;
+  }
+}
